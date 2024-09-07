@@ -5,7 +5,7 @@ def lambda_handler(event, context):
     # TODO implement
     print(event)
 
-    l.log_function("Função de Execução " + event)
+    l.log_function("Log de Execução após configurar Github action " + event)
 
     return {
         'statusCode': 404,
