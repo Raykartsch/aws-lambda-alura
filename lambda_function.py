@@ -11,7 +11,10 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 404,
-        'body': event
+        'body': event,
+        'headers':{
+            'content-type': 'text/html'
+        }
     }
 
 
