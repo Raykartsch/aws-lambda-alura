@@ -11,7 +11,7 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 404,
-        'body': event,
+        'body': f'''<html><body>Dados da Requisição {event}</html></body>''',
         'headers':{
             'content-type': 'text/html'
         }
