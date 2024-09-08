@@ -3,11 +3,16 @@ import log as l
 import os
 
 def lambda_handler(event, context):
-    record = event.records[0]
+    # TODO implement
+    print(event)
+    record = event['Records'][0]
+    print("Record: ", record)
+    minha_var = os.environ['MINHA_VAR']
+    print("Testando config de variável de ambiente lambda AWS: ", minha_var)
+    l.log_function("Log de Execução após configurar Github action " + str(event))
 
-    print(record)
     return {
-        'statusCode': 404,
+        'statusCode': 200,
         'body': f'''<html><body>Dados da Requisição {str(event)}</html></body>''',
         'headers':{
             'content-type': 'text/html'
